@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+     font-family: sans-serif;
+
+    --hue:194;
+     --color-bg: hsla(var(--hue), 0%, 100%, 1);
+     --text-color: hsla(var(--hue), 6%, 21%, 1);
+     --card-primary-bg:hsla(var(--hue), 9%, 89%, 1);
+     --card-selected-color-bg:hsla(var(--hue), 97%, 31%, 1);
+     --card-select-text-color: hsla(var(--hue), 0%, 100%, 1);
+
+     font-size: clamp(40% ,1% + 2vw , 60%);
+
+}
+
+html.light{
+    --color-bg: hsl(var(--hue), 5%, 7%);
+    --text-color: hsla(var(--hue), 0%, 100%, 1);
+
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+    display: none;
+}
+
+body{
+    background-color: var(--color-bg);
+    font-size: 1.6rem;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#toggleMode{
+    color: var(--text-color);
+    position: absolute;
+    top:3.2rem;
+    right: 3.2rem;
+    font-size: 3.2rem;
+}
+.app{
+    display: grid;
+    justify-items: center;
+}
+
+.flex{
+    display: flex;
+}
+
+button{
+    background: transparent;
+    border: none;
+    font-size: 4.8rem;
+    color: var(--text-color);
+    line-height: 0;
+
+    cursor: pointer;
+}
+
+#controls button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+span{
+    color: var(--text-color);
+    font-size: 12.6rem;
+}
+
+#controls{
+    margin-top: 1rem;
+    gap: 4rem;
+}
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle{
+    display: none;
+}
+
+#cards{
+    margin-top: 3.2rem;
+    gap: 1.2rem;
+}
+#cards button{
+    background-color: var(--card-primary-bg);
+    border-radius: 2rem;
+    padding: 1.6rem;
+}
+
+html.light #cards button{
+    background-color: hsla(194, 100%, 63%, 1);
+}
+html.light #cards button.secondary{
+    background-color: var(--card-selected-color-bg);
+    color: var(--card-select-text-color);
+}
+
+#cards button.secondary{
+    background-color: var(--card-selected-color-bg);
+    color: var(--card-select-text-color);
+}
+
+@media(min-width:768px){
+    .app{
+        display: flex;
+        gap: 19.2rem;
+    }
+
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3.2rem;
+    }
+
+   
+}

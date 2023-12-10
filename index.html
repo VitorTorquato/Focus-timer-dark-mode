@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer Dark/Light mode</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="module" src="src/main.js" defer></script>
+</head>
+<body>
+    
+    <div class="app">
+        <div>
+            <button id="toggleMode">
+                <span class="sr-only">Turn on Turn off dark mode</span>
+                <i class="ph-bold ph-sun"></i>
+                <i class="ph-bold ph-moon"></i>
+            </button>
+            
+            <section id="Timer" class="flex">
+                <span id="minutes">20</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+            <section id="controls" class="flex">
+                <button 
+                data-action="toggleRunning"
+                class="ph ph-play-circle">
+                    <span class="sr-only">Play timer</span>
+                </button>
+                <button 
+                data-action="toggleRunning"
+                class="ph ph-pause-circle" >
+                    <span class="sr-only">Pause timer</span>
+                </button> 
+                <button 
+                data-action="reset"
+                class="ph ph-stop-circle">
+                    <span class="sr-only">Stop timer</span>
+                </button>
+                <button 
+                data-action="increase"
+                class="ph ph-plus-circle">
+                    <span class="sr-only">Increse 5 minutes</span>
+                </button>
+                <button 
+                data-action="decrease"
+                class="ph ph-minus-circle">
+                    <span class="sr-only">Decrease 5 minutes</span>
+                </button>
+            </section>
+        </div>
+
+        <section id="cards"  class="flex">
+            <button 
+            data-action="toggleForestSound"
+            class="ph ph-tree">
+                <span class="sr-only">Play forest sound</span>
+            </button>
+            <button 
+            data-action="toggleRainSound"
+            class="ph ph-cloud-rain">
+                <span class="sr-only">Play rain sound</span>
+            </button>
+            <button 
+            data-action="togglePlaceSound"
+            class="ph ph-storefront">
+                <span class="sr-only">Play caferteria sound</span>
+            </button>
+            <button
+            data-action="toggleFirePlaceSound"
+            class="ph ph-fire">
+                <span class="sr-only">Play fireplace sound</span>
+            </button>
+        </section>
+    </div>
+</body>
+</html>
